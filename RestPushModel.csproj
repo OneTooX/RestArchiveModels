@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <RootNamespace>OneTooX.RestPush.Model</RootNamespace>
+    <AssemblyName>OneTooX.RestPush.Model</AssemblyName>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Fiftytwo A/S</Authors>
+    <Description>Model classes for the OneTooX REST Push archive solution.</Description>
+    <Copyright>Fiftytwo A/S</Copyright>
+    <PackageIcon>OneTooX-h25.png</PackageIcon>
+    <PackageIconUrl />
+    <PackageTags>OneTooX REST</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+</Project>
