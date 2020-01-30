@@ -9,6 +9,11 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
+variables:
+    major: 1
+    minor: 0
+    patch: 0
+name: $(major).$(minor).$(patch).$(Rev:r)
 steps:
 - task: DotNetCoreCLI@2
   displayName: Build
@@ -20,9 +25,9 @@ steps:
     command: 'pack'
     outputDir: '$(Build.ArtifactStagingDirectory)'
     versioningScheme: byPrereleaseNumber
-    majorVersion: 1
-    minorVersion: 0
-    patchVersion: 0
+    majorVersion: $(major)
+    minorVersion: $(minor)
+    patchVersion: $(patch)
 - task: PublishBuildArtifacts@1
   displayName: Publish
   inputs:
