@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace OneTooXRestArchiveTest.V1.Models
+namespace OneTooX.RestPush.Model
 {
     public enum JobStatus
     {

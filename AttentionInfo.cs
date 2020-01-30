@@ -1,4 +1,4 @@
-﻿namespace OneTooXRestArchiveTest.V1.Models
+﻿namespace OneTooX.RestPush.Model
 {
     public class AttentionInfo
     {
