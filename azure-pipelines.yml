@@ -11,9 +11,8 @@ pool:
 
 variables:
     major: 1
-    minor: 0
-    patch: 2
-name: $(major).$(minor).$(patch).$(Rev:r)
+    minor: 1
+name: $(major).$(minor).$(Rev:r)
 steps:
 - task: DotNetCoreCLI@2
   displayName: Build
@@ -24,10 +23,7 @@ steps:
   inputs: 
     command: 'pack'
     outputDir: '$(Build.ArtifactStagingDirectory)'
-    versioningScheme: byPrereleaseNumber
-    majorVersion: $(major)
-    minorVersion: $(minor)
-    patchVersion: $(patch)
+    versioningScheme: byBuildNumber
 - task: PublishBuildArtifacts@1
   displayName: Publish
   inputs:
