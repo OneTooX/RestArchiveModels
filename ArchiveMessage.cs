@@ -16,7 +16,7 @@ namespace OneTooX.RestPush.Model
         Eboks = 1,
         RemotePrint = 2,
         Addendum = 3,
-        Dkal = 5,
+        DigitalPost = 5,
         LocalPrint = 7,
         Archive = 8,
         Email = 9,
