@@ -54,7 +54,7 @@ namespace OneTooX.RestPush.Model
         public string Division { get; set; }
         public string UserId { get; set; }
         public Document MainDocument { get; set; }
-        public IEnumerable<Document> Addendums { get; set; }
+        public List<Document> Addendums { get; set; }
         public string FixedAddendumName { get; set; }
         public string ArchiveCaseId { get; set; }
         public string ArchiveCategory { get; set; }
