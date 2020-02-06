@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OneTooX.RestPush.Model</name>
+    </assembly>
+    <members>
+        <member name="T:OneTooX.RestPush.Model.JobStatus">
+            <summary>
+            The status of the job.
+            </summary>
+        </member>
+        <member name="T:OneTooX.RestPush.Model.Channel">
+            <summary>
+            The main channel of the job.
+            </summary>
+        </member>
+        <member name="T:OneTooX.RestPush.Model.ChannelResolution">
+            <summary>
+            The resolution of the channel. The value is Accepted if delivery is mandatory.
+            </summary>
+        </member>
+        <member name="T:OneTooX.RestPush.Model.MailPriority">
+            <summary>
+            The mail priority of the job.
+            </summary>
+        </member>
+        <member name="T:OneTooX.RestPush.Model.ReceiverType">
+            <summary>
+            The type of receiver of the job.
+            </summary>
+        </member>
+        <member name="T:OneTooX.RestPush.Model.ArchiveMessage">
+            <summary>
+            The message containing the job metadata, document and addendums.
+            </summary>
+        </member>
+    </members>
+</doc>

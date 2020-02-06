@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace OneTooX.RestPush.Model
 {
+    /// <summary>
+    /// The status of the job.
+    /// </summary>
     public enum JobStatus
     {
         Waiting = 0,
@@ -11,6 +14,9 @@ namespace OneTooX.RestPush.Model
         Error = 99,
         Nodelivery = 11
     }
+    /// <summary>
+    /// The main channel of the job.
+    /// </summary>
     public enum Channel
     {
         Eboks = 1,
@@ -21,8 +27,10 @@ namespace OneTooX.RestPush.Model
         Archive = 8,
         Email = 9,
         EboksExpress = 10,
-        NoDelivery = 11
     }
+    /// <summary>
+    /// The resolution of the channel. The value is Accepted if delivery is mandatory.
+    /// </summary>
     public enum ChannelResolution
     {
         Accepted = 0,
@@ -30,13 +38,17 @@ namespace OneTooX.RestPush.Model
         InvalidReceiverFormat = 2,
         ReceiverNotRegistered = 3
     }
-
+    /// <summary>
+    /// The mail priority of the job.
+    /// </summary>
     public enum MailPriority
     {
         A = 1,
         B = 2
     }
-
+    /// <summary>
+    /// The type of receiver of the job.
+    /// </summary>
     public enum ReceiverType
     {
         None = 0,
@@ -44,7 +56,9 @@ namespace OneTooX.RestPush.Model
         Company = 2,
         Email = 3
     }
-
+    /// <summary>
+    /// The message containing the job metadata, document and addendums.
+    /// </summary>
     public class ArchiveMessage
     {
         public int JobId { get; set; }
