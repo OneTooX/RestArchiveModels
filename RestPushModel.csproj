@@ -15,8 +15,35 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>OneTooX.RestPush.Model.xml</DocumentationFile>
+    <DocumentationFile>Documentation/OneTooX.RestPush.Model.xml</DocumentationFile>
   </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>Documentation/OneTooX.RestPush.Model.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace></RootNamespace>
+    <Configurations>Debug;Release</Configurations>
+    <EnableDocumentationFile>true</EnableDocumentationFile>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <Version>1.0.11</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Documentation/OneTooX.RestPush.Model.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Documentation/OneTooX.RestPush.Model.xml">
+      <Pack>true</Pack>
+      <PackageCopyToOutput>true</PackageCopyToOutput>
+      <PackageFlatten>true</PackageFlatten>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Visible>False</Visible>
+    </Content>
+  </ItemGroup>
 
   <ItemGroup>
     <None Include="img\OneTooX-h25.png">

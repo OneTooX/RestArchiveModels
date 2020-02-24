@@ -1,0 +1,390 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OneTooX.RestPush.Model</name>
+    </assembly>
+    <members>
+        <member name="T:OneTooX.RestPush.Model.Document">
+            <summary>
+            A Document represents the main document of a job or an addendum.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.Document.ContentType">
+            <summary>
+            The content type of the document. Currently only application/pdf is supported. 
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.Document.DocumentData">
+            <summary>
+            The contents of the document.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.Document.Title">
+            <summary>
+            The title of the document.
+            </summary>
+        </member>
+        <member name="T:OneTooX.RestPush.Model.JobStatus">
+             <summary>
+             The status of the job.
+             <dl>
+             <li>
+             <dt>0</dt>
+             <dd>Waiting to get delivered to one or more channels.</dd>
+             </li>
+             <li>
+             <dt>1</dt>
+             <dd>Delivered to all channels.</dd>
+             </li>
+             <li>
+             <dt>3</dt>
+             <dd>The job has been cancelled and will not be delivered.</dd>
+             </li>
+             <li>
+             <dt>99</dt>
+             <dd>A fatal error has occurred and the job will not be delivered.</dd>
+             </li>
+             <li>
+             <dt>11</dt>
+             <dd>Delivery was not possible and this was acceptable for the channel.</dd>
+             </li>
+             </dl>
+            </summary>
+        </member>
+        <member name="T:OneTooX.RestPush.Model.Channel">
+             <summary>
+             The main channel of the job.
+             <dl>
+             <li>
+             <dt>1</dt>
+             <dd>e-Boks.</dd>
+             </li>
+             <li>
+             <dt>2</dt>
+             <dd>Remote print.</dd>
+             </li>
+             <li>
+             <dt>3</dt>
+             <dd>Addendum.</dd>
+             </li>
+             <li>
+             <dt>5</dt>
+             <dd>Digital Post.</dd>
+             </li>
+             <li>
+             <dt>7</dt>
+             <dd>Local Print.</dd>
+             </li>
+             <li>
+             <dt>8</dt>
+             <dd>Archive.</dd>
+             </li>
+             <li>
+             <dt>9</dt>
+             <dd>Email.</dd>
+             </li>
+             <li>
+             <dt>10</dt>
+             <dd>e-Boks Ekspres.</dd>
+             </li>
+             </dl>
+            </summary>
+        </member>
+        <member name="T:OneTooX.RestPush.Model.ChannelResolution">
+            <summary>
+            The delivery resolution of the channel. The value is Accepted if delivery is mandatory.
+            <dl>
+            <li>
+            <dt>0</dt>
+            <dd>Accepted.</dd>
+            </li>
+            <li>
+            <dt>1</dt>
+            <dd>Not delivered due to no receiver.</dd>
+            </li>
+            <li>
+            <dt>2</dt>
+            <dd>Not delivered due to invalid receiver format.</dd>
+            </li>
+            <li>
+            <dt>3</dt>
+            <dd>Not delivered due to receiver not being registered in the receiving system.</dd>
+            </li>
+            </dl>
+            </summary>
+        </member>
+        <member name="T:OneTooX.RestPush.Model.MailPriority">
+            <summary>
+            The mail priority of the job.
+            <dl>
+            <li>
+            <dt>1</dt>
+            <dd>Priority.</dd>
+            </li>
+            <li>
+            <dt>2</dt>
+            <dd>Economy.</dd>
+            </li>
+            </dl>
+            </summary>
+        </member>
+        <member name="T:OneTooX.RestPush.Model.ReceiverType">
+            <summary>
+            The type of receiver of the job.
+            <dl>
+            <li>
+            <dt>0</dt>
+            <dd>No receiver.</dd>
+            </li>
+            <li>
+            <dt>1</dt>
+            <dd>Person.</dd>
+            </li>
+            <li>
+            <dt>2</dt>
+            <dd>Company.</dd>
+            </li>
+            <li>
+            <dt>3</dt>
+            <dd>Email.</dd>
+            </li>
+            </dl>
+            </summary>
+        </member>
+        <member name="T:OneTooX.RestPush.Model.ArchiveMessage">
+            <summary>
+            The message containing the job metadata, document and addendums.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.ArchiveMessage.JobId">
+            <summary>
+            The ID of the delivery job.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.ArchiveMessage.ParentJobId">
+            <summary>
+            The ID of the parent job, if any. Used for mail merges. Zero if there is no parent.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.ArchiveMessage.CreateTime">
+            <summary>
+            The time of creation of the job.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.ArchiveMessage.CustomerId">
+            <summary>
+            The ID of the customer that the user belongs to.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.ArchiveMessage.Division">
+            <summary>
+            The name of the division that the user belongs to.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.ArchiveMessage.UserId">
+            <summary>
+            The ID of the user that sent the job.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.ArchiveMessage.MainDocument">
+            <summary>
+            The main document.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.ArchiveMessage.Addendums">
+            <summary>
+            The list of addendums, if any.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.ArchiveMessage.FixedAddendumName">
+            <summary>
+            The name of the fixed addendum, if any.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.ArchiveMessage.ArchiveCaseId">
+            <summary>
+            The case ID used for archiving, if any.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.ArchiveMessage.ArchiveCategory">
+            <summary>
+            The category for archiving.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.ArchiveMessage.ArchiveDescription">
+            <summary>
+            The description for archiving, if any.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.ArchiveMessage.Status">
+            <summary>
+            The status of the job.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.ArchiveMessage.Channel">
+            <summary>
+            The main channel of the job.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.ArchiveMessage.ChannelResolution">
+            <summary>
+            The resolution of the main channel of the job.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.ArchiveMessage.ClientAddress">
+            <summary>
+            The IP address of the client delivering the job.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.ArchiveMessage.ClientInfo">
+            <summary>
+            Information on the client delivering the job. For non-webservice delivery this is the user agent of the client browser.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.ArchiveMessage.ClientVersion">
+            <summary>
+            The version of the client. For non-webservice delivery this is the version of the OneTooX server.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.ArchiveMessage.IsColorPrint">
+            <summary>
+            Determines if color was used for remote printing.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.ArchiveMessage.Receiver">
+            <summary>
+            The ID of the receiver, e.g. a civil registration no. or a CBR no.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.ArchiveMessage.ReceiverType">
+            <summary>
+            The type of the receiver.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.ArchiveMessage.AttentionInfo">
+            <summary>
+            The AttentionInfo, if any.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.ArchiveMessage.CustomerText">
+            <summary>
+            The customer-specified text, if any.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.ArchiveMessage.DigitalDestinationCountry">
+            <summary>
+            ISO code of the destination country for digital delivery. Currently only DK is supported.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.ArchiveMessage.DigitalPostReceipt">
+            <summary>
+            The receipt from Digital Post, if this is the main channel.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.ArchiveMessage.DocumentType">
+            <summary>
+            The document type used for creating the job.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.ArchiveMessage.DigitalPostResponse">
+            <summary>
+            The Digital Post response address that the receiver can reply to if supplied.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.ArchiveMessage.DigitalPostResponseSubject">
+            <summary>
+            The subject belonging to the Digital Post response address.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.ArchiveMessage.MaterialId">
+            <summary>
+            The Digital Post material ID, if Digital Post is the main channel.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.ArchiveMessage.Title">
+            <summary>
+            The title of the job.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.ArchiveMessage.IsArchived">
+            <summary>
+            Determines if the job is archived.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.ArchiveMessage.IsDuplex">
+            <summary>
+            Determines if the document is printed in duplex, if sent to remote print or local print.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.ArchiveMessage.MailPriority">
+            <summary>
+            The mail priority, if sent to remote print.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.ArchiveMessage.TotalNumberOfPages">
+            <summary>
+            The total number of pages in the main document and addendums.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.ArchiveMessage.TotalNumberOfSheets">
+            <summary>
+            The total number of sheets in the main document and addendums.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.ArchiveMessage.TotalSize">
+            <summary>
+            The total size in bytes of the main document and addendums.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.ArchiveMessage.OutputSystem">
+            <summary>
+            The output system that was used to deliver the delivery.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.ArchiveMessage.PostalDestinationCountry">
+            <summary>
+            ISO code of the destination country for postal delivery.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.ArchiveMessage.SendingSystem">
+            <summary>
+            The name of the system that sent the document
+            </summary>
+        </member>
+        <member name="T:OneTooX.RestPush.Model.AttentionInfo">
+            <summary>
+            AttentionInfo contains data related to the Digital Post AttentionFormat - see https://digst.dk/media/16810/vejledning-i-anvendelse-af-attentionformatet.pdf.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.AttentionInfo.PNummer">
+            <summary>
+            The P-nummer of the receiver.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.AttentionInfo.Email">
+            <summary>
+            The e-mail of the receiver.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.AttentionInfo.PersonNavn">
+            <summary>
+            The name of the receiver.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.AttentionInfo.EnhedsNavn">
+            <summary>
+            The OU of the receiver.
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.AttentionInfo.PrimaerKlasse">
+            <summary>
+            FORM code (public classification).
+            </summary>
+        </member>
+        <member name="P:OneTooX.RestPush.Model.AttentionInfo.SekundaerKlasse">
+            <summary>
+            KLE code or similar (public classification).
+            </summary>
+        </member>
+    </members>
+</doc>
