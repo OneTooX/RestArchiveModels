@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace OneTooX.RestPush.Model
 {
@@ -166,30 +167,37 @@ namespace OneTooX.RestPush.Model
         /// <summary>
         /// The ID of the delivery job.
         /// </summary>
+        [Required]
         public int JobId { get; set; }
         /// <summary>
         /// The ID of the parent job, if any. Used for mail merges. The value is 0 if there is no parent.
         /// </summary>
+        [Required]
         public int ParentJobId { get; set; }
         /// <summary>
         /// The time of creation of the job.
         /// </summary>
+        [Required]
         public DateTime CreateTime { get; set; }
         /// <summary>
         /// The ID of the customer that the user belongs to.
         /// </summary>
+        [Required]
         public string CustomerId { get; set; }
         /// <summary>
         /// The name of the division that the user belongs to.
         /// </summary>
+        [Required]
         public string Division { get; set; }
         /// <summary>
         /// The ID of the user that sent the job.
         /// </summary>
+        [Required]
         public string UserId { get; set; }
         /// <summary>
         /// The main document.
         /// </summary>
+        [Required]
         public Document MainDocument { get; set; }
         /// <summary>
         /// The list of addendums, if any.
@@ -206,6 +214,7 @@ namespace OneTooX.RestPush.Model
         /// <summary>
         /// The category for archiving.
         /// </summary>
+        [Required]
         public string ArchiveCategory { get; set; }
         /// <summary>
         /// The description for archiving, if any.
@@ -214,26 +223,32 @@ namespace OneTooX.RestPush.Model
         /// <summary>
         /// The status of the job.
         /// </summary>
+        [Required]
         public JobStatus Status { get; set; }
         /// <summary>
         /// The main channel of the job.
         /// </summary>
+        [Required]
         public Channel Channel { get; set; }
         /// <summary>
         /// The resolution of the main channel of the job.
         /// </summary>
+        [Required]
         public ChannelResolution ChannelResolution { get; set; }
         /// <summary>
         /// The IP address of the client delivering the job.
         /// </summary>
+        [Required]
         public string ClientAddress { get; set; }
         /// <summary>
         /// Information on the client delivering the job. For non-webservice delivery this is the user agent of the client browser.
         /// </summary>
+        [Required]
         public string ClientInfo { get; set; }
         /// <summary>
-        /// The version of the client. For non-webservice delivery this is the version of the OneTooX server.
+        /// The version of the client. For webservice delivery this is the version of the OneTooX server.
         /// </summary>
+        [Required]
         public string ClientVersion { get; set; }
         /// <summary>
         /// Determines if color was used for remote printing.
@@ -242,10 +257,12 @@ namespace OneTooX.RestPush.Model
         /// <summary>
         /// The ID of the receiver, e.g. a civil registration no. or a CBR no.
         /// </summary>
+        [Required]
         public string Receiver { get; set; }
         /// <summary>
         /// The type of the receiver.
         /// </summary>
+        [Required]
         public ReceiverType ReceiverType { get; set; }
         /// <summary>
         /// The AttentionInfo, if any.
@@ -266,6 +283,7 @@ namespace OneTooX.RestPush.Model
         /// <summary>
         /// The document type used for creating the job.
         /// </summary>
+        [Required]
         public string DocumentType { get; set; }
         /// <summary>
         /// The Digital Post response address that the receiver can reply to if supplied.
@@ -282,6 +300,7 @@ namespace OneTooX.RestPush.Model
         /// <summary>
         /// The title of the job.
         /// </summary>
+        [Required]
         public string Title { get; set; }
         /// <summary>
         /// Determines if the job is archived.
@@ -298,18 +317,22 @@ namespace OneTooX.RestPush.Model
         /// <summary>
         /// The total number of pages in the main document and addendums.
         /// </summary>
+        [Required]
         public int TotalNumberOfPages { get; set; }
         /// <summary>
         /// The total number of sheets in the main document and addendums.
         /// </summary>
+        [Required]
         public int TotalNumberOfSheets { get; set; }
         /// <summary>
         /// The total size in bytes of the main document and addendums.
         /// </summary>
+        [Required]
         public int TotalSize { get; set; }
         /// <summary>
         /// The output system that was used to deliver the delivery.
         /// </summary>
+        [Required]
         public string OutputSystem { get; set; }
         /// <summary>
         /// ISO code of the destination country for postal delivery.
@@ -318,6 +341,7 @@ namespace OneTooX.RestPush.Model
         /// <summary>
         /// The name of the system that sent the document
         /// </summary>
+        [Required]
         public string SendingSystem { get; set; }
     }
 }
