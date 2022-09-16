@@ -1,29 +1,21 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
+variables:
+  ${{ if eq(length(split(variables['Build.SourceBranchName'], '.')), 2) }}:
+    otxVersion: ${{ variables['Build.SourceBranchName'] }}
+  ${{ else }}:
+    otxVersion: '22.5'
+name: $(otxVersion).$(Rev:r)
 trigger:
 - master
-
 pool:
   vmImage: 'ubuntu-latest'
-
-variables:
-    major: 1
-    minor: 2
-name: $(major).$(minor).$(Rev:r)
 steps:
-- task: DotNetCoreCLI@2
-  displayName: Build
-  inputs:
-    command: 'build'
 - task: DotNetCoreCLI@2
   displayName: Pack
   inputs: 
     command: 'pack'
     outputDir: '$(Build.ArtifactStagingDirectory)'
     versioningScheme: byBuildNumber
+    buildProperties: 'Version=$(Build.BuildNumber)'
 - task: PublishBuildArtifacts@1
   displayName: Publish
   inputs:
