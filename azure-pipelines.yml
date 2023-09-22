@@ -13,6 +13,12 @@ steps:
   inputs:
     command: 'build'
 - task: DotNetCoreCLI@2
+  inputs:
+    command: 'pack'
+    packagesToPack: '**/*.csproj'
+    includesource: true
+    versioningScheme: 'byBuildNumber'
+    buildProperties: 'Version=$(Build.BuildNumber)'
   displayName: Pack
   inputs: 
     command: 'pack'
