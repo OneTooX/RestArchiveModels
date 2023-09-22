@@ -16,8 +16,6 @@ steps:
   inputs:
     command: 'pack'
     packagesToPack: '**/*.csproj'
-    includesymbols: true
-    includesource: true
     versioningScheme: 'byBuildNumber'
     buildProperties: 'Version=$(Build.BuildNumber)'
   displayName: Pack
